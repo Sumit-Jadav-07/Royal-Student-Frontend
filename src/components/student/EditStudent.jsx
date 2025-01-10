@@ -93,7 +93,7 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
 
       // Make an API call to update the student details
       const response = await axios.put(
-        `http://localhost:1218/api/private/admin/editstudent/${studentId}`,
+        `https://royal-student-backend.onrender.com/api/private/admin/editstudent/${studentId}`,
         formData,
         {
           headers: {
@@ -179,7 +179,7 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
 
         <button
           onClick={handleFormSubmit}
-          className="mt-4 bg-blue-500 text-white p-3 rounded-md"
+          className="p-3 mt-4 text-white bg-blue-500 rounded-md"
         >
           Save
         </button>

@@ -61,7 +61,7 @@ function SendOtp({ setIsSubmitting, onClosed, onOtpSent }) {
       try {
         // Send POST request to backend
         const response = await axios.post(
-          "http://localhost:1218/api/public/session/sendotp",
+          "https://royal-student-backend.onrender.com/api/public/session/sendotp",
           { email },
           { headers: { "Content-Type": "application/json" } }
         );
@@ -132,7 +132,7 @@ function SendOtp({ setIsSubmitting, onClosed, onOtpSent }) {
       />
 
       {/* Header Section */}
-      <div className="w-full flex justify-between">
+      <div className="flex justify-between w-full">
         <h1 className="text-3xl font-bold">SendOtp</h1>
         <span onClick={handleClose} className="text-xl cursor-pointer">
           &#10006; {/* Close button */}

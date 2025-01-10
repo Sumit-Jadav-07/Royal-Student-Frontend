@@ -62,7 +62,7 @@ function Login({ setLoading , setShowSendOtpModal }) {
       setLoading(true); // Show loader
       try {
         const response = await axios.post(
-          "http://localhost:1218/api/public/session/login",
+          "https://royal-student-backend.onrender.com/api/public/session/login",
           { email, password },
           {
             headers: {
@@ -156,7 +156,7 @@ function Login({ setLoading , setShowSendOtpModal }) {
         Login
       </button>
 
-      <div className="flex items-center tracking-wide mt-4">
+      <div className="flex items-center mt-4 tracking-wide">
         <p className="text-lg">Forgot Password?</p>
         <a
           className="text-[#00c0ff] hover:text-[#0082fe] text-lg ml-2"

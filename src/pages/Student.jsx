@@ -46,7 +46,7 @@ function Student() {
     try {
       setLoading(true);
       const data = await fetchApi(
-        `http://localhost:1218/api/private/admin/getStudentByName?characters=${query}`
+        `https://royal-student-backend.onrender.com/api/private/admin/getStudentByName?characters=${query}`
       );
       setSearchResults(data); // Update search results
       setShowDropdown(true); // Show dropdown
@@ -63,7 +63,7 @@ function Student() {
     try {
       setLoading(true);
       const data = await fetchApi(
-        `http://localhost:1218/api/private/admin/getStudentById/${studentId}`
+        `https://royal-student-backend.onrender.com/api/private/admin/getStudentById/${studentId}`
       );
       setSelectedStudent(data); // Update selected student details
       setShowDropdown(false); // Hide dropdown
@@ -114,7 +114,7 @@ function Student() {
 
       {/* Loading spinner displayed when `loading` is true */}
       {loading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 z-50">
+        <div className="absolute inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
           <span className="loading loading-spinner text-primary"></span>
         </div>
       )}
@@ -127,14 +127,14 @@ function Student() {
 
       {/* "Add Student" modal */}
       {showAddStudentModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <AddStudent onClosed={() => setShowAddStudentModal(false)} />
         </div>
       )}
 
       {/* "Edit Student" modal */}
       {showEditStudentModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <EditStudent
             onClosed={toggleEditStudentModal}
             onRefresh={handleRefreshAfterEdit}

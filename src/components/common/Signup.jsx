@@ -97,7 +97,7 @@ function Signup({ setLoading }) {
       try {
         // Send signup request to the backend
         const response = await axios.post(
-          "http://localhost:1218/api/public/session/signup",
+          "https://royal-student-backend.onrender.com/api/public/session/signup",
           { email, password, mobile, fullname }, // Request payload
           {
             headers: {

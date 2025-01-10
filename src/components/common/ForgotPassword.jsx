@@ -82,7 +82,7 @@ function ForgotPassword({ setIsSubmitting, onClosed }) {
       try {
         // Make an API call to update the password
         const response = await axios.post(
-          "http://localhost:1218/api/public/session/forgotpassword", // API endpoint
+          "https://royal-student-backend.onrender.com/api/public/session/forgotpassword", // API endpoint
           { email, password, otp }, // Data to send
           {
             headers: {
@@ -152,7 +152,7 @@ function ForgotPassword({ setIsSubmitting, onClosed }) {
       />
 
       {/* Title and Close Button */}
-      <div className="w-full flex justify-between">
+      <div className="flex justify-between w-full">
         <h1 className="text-3xl font-bold">Update Password</h1>
         <span onClick={handleClose} className="text-xl cursor-pointer">
           &#10006; {/* Close icon */}
