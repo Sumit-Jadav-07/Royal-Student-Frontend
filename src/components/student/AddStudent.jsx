@@ -43,7 +43,7 @@ const AddStudent = ({ onClosed }) => {
 
     try {
       // Check if there are no validation errors before sending data to the backend
-      if (Object.keys(ValidationErrors).length === 2) {
+      if (Object.keys(ValidationErrors).length === 0) {
         // Retrieve the token from localStorage or sessionStorage for authentication
         const token =
           localStorage.getItem("jwtToken") ||

@@ -71,7 +71,7 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
     setErrors(ValidationErrors);
 
     // If there are validation errors, show a message and abort submission
-    if (Object.keys(ValidationErrors).length ==  2) {
+    if (Object.keys(ValidationErrors).length > 0) {
       setMessage("Please correct the errors in the form.");
       setIsError(true);
       setVisible(true);

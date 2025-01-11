@@ -1,17 +1,17 @@
 export const validateForm = (data) => {
   const errors = {};
 
-  if (!data.fullname) {
-    errors.fullname = "Full name is required";
-  } else if (fullname.trim().split(" ").length < 2) {
-    errors.fullname = "Full name must include both first and last name";
-  }
+//   if (!data.fullname) {
+//     errors.fullname = "Full name is required";
+//   } else if (fullname.trim().split(" ").length < 2) {
+//     errors.fullname = "Full name must include both first and last name";
+//   }
 
-  if (!data.password) {
-    errors.password = "Password is required";
-  } else if (data.password.length < 8) {
-    errors.password = "Password must be at least 8 characters";
-  }
+//   if (!data.password) {
+//     errors.password = "Password is required";
+//   } else if (data.password.length < 8) {
+//     errors.password = "Password must be at least 8 characters";
+//   }
 
   if (!data.name) {
     errors.name = "Name is required";
