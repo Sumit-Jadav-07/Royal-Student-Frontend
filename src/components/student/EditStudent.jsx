@@ -173,9 +173,186 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
           </span>
         </div>
 
-        {/* Form fields for editing student details */}
-        {/* Each field includes a label, input/select, and error display */}
-        {/* Batch, college, communication, etc., are structured similarly */}
+       {/* Form for student details */}
+       <div className="flex justify-between w-full gap-6">
+          <div className="flex flex-col gap-2 w-[50%]">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              placeholder="Student name"
+              className="p-3 bg-[#daf2f6] rounded-md w-full outline-none placeholder:text-[#7d7d7d]"
+            />
+            {errors.name && <div style={{ color: "red" }}>{errors.name}</div>}
+          </div>
+          <div className="flex flex-col gap-2 w-[50%]">
+            <label htmlFor="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              placeholder="Student email"
+              className="p-3 bg-[#daf2f6] rounded-md w-full outline-none placeholder:text-[#7d7d7d]"
+            />
+            {errors.email && <div style={{ color: "red" }}>{errors.email}</div>}
+          </div>
+        </div>
+
+        {/* Additional fields for College, Batch, Mobile */}
+        <div className="flex justify-between w-full gap-6">
+          <div className="flex flex-col gap-2 w-[50%]">
+            <label htmlFor="clg">College</label>
+            <input
+              type="text"
+              id="clg"
+              name="college"
+              value={formData.college}
+              onChange={handleInputChange}
+              placeholder="College name"
+              className="p-3 bg-[#daf2f6] rounded-md w-full outline-none placeholder:text-[#7d7d7d]"
+            />
+            {errors.college && (
+              <div style={{ color: "red" }}>{errors.college}</div>
+            )}
+          </div>
+
+          <div className="flex flex-col gap-2 w-[50%]">
+            <label htmlFor="batch">Batch</label>
+            <input
+              type="text"
+              id="batch"
+              name="batch"
+              value={formData.batch}
+              onChange={handleInputChange}
+              placeholder="Batch name"
+              className="p-3 bg-[#daf2f6] rounded-md w-full outline-none placeholder:text-[#7d7d7d]"
+            />
+            {errors.batch && <div style={{ color: "red" }}>{errors.batch}</div>}
+          </div>
+        </div>
+
+        {/* Mobile */}
+        <div className="flex justify-between w-full gap-6">
+          {/* Mobile field */}
+          <div className="flex flex-col gap-2 w-[100%]">
+            <label htmlFor="mobile">Mobile</label>
+            <input
+              type="text"
+              id="mobile"
+              name="mobile"
+              value={formData.mobile}
+              onChange={handleInputChange}
+              placeholder="Student mobile"
+              className="p-3 bg-[#daf2f6] rounded-md w-full outline-none placeholder:text-[#7d7d7d]"
+            />
+            {errors.mobile && (
+              <div style={{ color: "red" }}>{errors.mobile}</div>
+            )}
+          </div>
+          </div>
+
+        <div className="flex justify-between w-full gap-6">
+          {/* Regularitiy, Test Performance*/}
+          <div className="flex flex-col gap-2 w-[50%]">
+            <label htmlFor="regularity">Regularity</label>
+            <select
+              id="regularity"
+              name="regularity"
+              value={formData.regularity}
+              onChange={handleInputChange}
+              className="p-3 bg-[#daf2f6] rounded-md w-full outline-none placeholder:text-[#7d7d7d]"
+            >
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            {errors.regularity && (
+              <div style={{ color: "red" }}>{errors.regularity}</div>
+            )}
+          </div>
+
+          <div className="flex flex-col gap-2 w-[50%]">
+            <label htmlFor="testPerformance">TestPerformance</label>
+            <select
+              id="testPerformance"
+              name="testPerformance"
+              value={formData.testPerformance}
+              onChange={handleInputChange}
+              className="p-3 bg-[#daf2f6] rounded-md w-full outline-none placeholder:text-[#7d7d7d]"
+            >
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            {errors.testPerformance && (
+              <div style={{ color: "red" }}>{errors.testPerformance}</div>
+            )}
+          </div>
+          </div>
+
+
+        <div className="flex justify-between w-full gap-6">
+        <div className="flex flex-col gap-2 w-[50%]">
+            <label htmlFor="communication">Communication</label>
+            <select
+              id="communication"
+              name="communication"
+              value={formData.communication}
+              onChange={handleInputChange}
+              className="p-3 bg-[#daf2f6] rounded-md w-full outline-none placeholder:text-[#7d7d7d]"
+            >
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            {errors.communication && (
+              <div style={{ color: "red" }}>{errors.communication}</div>
+            )}
+          </div>
+
+          <div className="flex flex-col gap-2 w-[50%]">
+            <label htmlFor="discipline">Discipline</label>
+            <select
+              id="discipline"
+              name="discipline"
+              value={formData.discipline}
+              onChange={handleInputChange}
+              className="p-3 bg-[#daf2f6] rounded-md w-full outline-none placeholder:text-[#7d7d7d]"
+            >
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            {errors.discipline && (
+              <div style={{ color: "red" }}>{errors.discipline}</div>
+            )}
+          </div>
+
+          </div>
+        {/* Final submit button */}
+        <button
+            onClick={(e) => handleFormSubmit(e)} // Ensure correct function binding
+            className="p-3 mt-4 text-white bg-blue-500 rounded-md"
+            >
+            Submit
+        </button>
 
         <button
           onClick={handleFormSubmit}
