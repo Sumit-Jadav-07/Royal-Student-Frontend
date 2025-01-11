@@ -141,7 +141,6 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
       setIsOpen(false);
       onClosed(); // Notify parent that popup is closed
     }, 300); // Match animation duration
-    window.location.reload(); // Reload the page
   };
 
   // JSX to render the EditStudent form
@@ -346,13 +345,6 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
           </div>
 
           </div>
-        {/* Final submit button */}
-        <button
-            onClick={(e) => handleFormSubmit(e)} // Ensure correct function binding
-            className="p-3 mt-4 text-white bg-blue-500 rounded-md"
-            >
-            Submit
-        </button>
 
         <button
           onClick={handleFormSubmit}
