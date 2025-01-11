@@ -112,13 +112,6 @@ function Student() {
         onAddStudentClick={toggleAddStudentModal}
       />
 
-      {/* Loading spinner displayed when `loading` is true */}
-      {loading && (
-        <div className="absolute inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
-          <span className="loading loading-spinner text-primary"></span>
-        </div>
-      )}
-
       {/* Display student details */}
       <StudentDetails
         student={selectedStudent}
@@ -142,6 +135,13 @@ function Student() {
             setIsSubmitting={setIsSubmitting}
             setLoading={setLoading}
           />
+        </div>
+      )}
+
+      {/* Loading spinner displayed when `loading` is true */}
+      {loading && (
+        <div className="absolute inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
+          <span className="loading loading-spinner text-primary"></span>
         </div>
       )}
     </div>
