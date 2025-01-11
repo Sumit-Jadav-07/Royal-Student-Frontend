@@ -113,12 +113,12 @@ function Student() {
       />
 
       {/* Loading spinner displayed when `loading` is true */}
-      {loading && console.log("Loading spinner is visible - Upper")}
+      {loading && console.log("Loading spinner")}
       {loading && (
         <div className="absolute inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
-            <div className="w-12 h-12 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin">
+          <span className="loading loading-spinner text-primary"></span>
         </div>
-     </div>
+      )}
 
       {/* Display student details */}
       <StudentDetails
@@ -144,16 +144,6 @@ function Student() {
             setLoading={setLoading}
           />
         </div>
-      )}
-
-      {/* Loading spinner displayed when `loading` is true */}
-      {loading && console.log("Loading spinner is visible - Lower")}
-      {loading && (
-        <div className="absolute inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
-            <div className="w-12 h-12 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin">
-        </div>
-     </div>
-
       )}
     </div>
   );
