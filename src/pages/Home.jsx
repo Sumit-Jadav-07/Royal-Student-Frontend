@@ -22,7 +22,7 @@ function Home() {
   };
 
   return (
-    <div className="font-metropolis h-screen w-screen flex items-center justify-center overflow-hidden">
+    <div className="flex items-center justify-center w-screen h-screen overflow-hidden font-metropolis">
 
       {/* Left Section - Login/Signup Form */}
       <div
@@ -46,7 +46,7 @@ function Home() {
           isLogin ? "translate-x-0" : "translate-x-[-100%]"
         }`}
       >
-        <div className="h-44 flex items-center justify-evenly flex-col text-center p-5 gap-4">
+        <div className="flex flex-col items-center gap-4 p-5 text-center h-44 justify-evenly">
           {isLogin ? (
             <>
               {/* If user is in Login form */}
@@ -81,7 +81,7 @@ function Home() {
 
       {/* Send OTP Modal */}
       {showSendOtpModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-60">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-60">
           <SendOtp
             setIsSubmitting={setIsSubmitting} // Set submission state
             onOtpSent={handleOtpSent} // Handle OTP sent action
@@ -92,7 +92,7 @@ function Home() {
 
       {/* Forgot Password Modal */}
       {showForgotPasswordModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-60">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-60">
           <ForgotPassword
             setIsSubmitting={setIsSubmitting} // Set submission state
             onClosed={() => setShowForgotPasswordModal(false)} // Close modal
@@ -102,15 +102,15 @@ function Home() {
 
       {/* Loader during loading */}
       {loading && !isSubmitting && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <span className="h-7 w-7 loading loading-spinner text-primary"></span>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
+            <div className="w-10 h-10 border-4 border-blue-500 rounded-full animate-spin border-t-transparent"></div>
         </div>
       )}
 
       {/* Loader during form submission */}
       {isSubmitting && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-70">
-          <span className="h-7 w-7 loading loading-spinner text-primary"></span>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
+            <div className="w-10 h-10 border-4 border-blue-500 rounded-full animate-spin border-t-transparent"></div>
         </div>
       )}
     </div>
