@@ -67,10 +67,11 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
 
     // Validate form data and set errors if any
     const ValidationErrors = validateForm(formData);
+    console.log("Validation Errors:", ValidationErrors);
     setErrors(ValidationErrors);
 
     // If there are validation errors, show a message and abort submission
-    if (Object.keys(ValidationErrors).length > 0) {
+    if (Object.keys(ValidationErrors).length ==  2) {
       setMessage("Please correct the errors in the form.");
       setIsError(true);
       setVisible(true);
